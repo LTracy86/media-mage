@@ -1,0 +1,64 @@
+# Media Mage - export rules for `git archive`.
+#
+# These mirror .distignore. .distignore drives build.sh (which packages the
+# working tree); export-ignore drives `git archive` (which packages a commit).
+# Both paths have to produce the same zip, so any change here needs the same
+# change there.
+#
+# Note: export-ignore is read from the .gitattributes of the COMMIT being
+# archived, not from the working tree. A rule added here does nothing until it
+# is committed.
+
+# The test harness. setup.sh drops a MySQL database and rm -rf's a directory,
+# the seed scripts delete attachments, and test/README.md publishes local admin
+# credentials. It must not ship.
+test/            export-ignore
+
+# Packaging and repo metadata.
+.distignore      export-ignore
+.gitattributes   export-ignore
+.gitignore       export-ignore
+.github/         export-ignore
+build.sh         export-ignore
+
+# GitHub-facing readme. readme.txt is the one WordPress reads.
+README.md        export-ignore
+
+# Artwork sources. Note this is assets-src/, NOT assets/ - the plugin's own
+# assets/icon.png is rendered by the admin header and has to ship.
+assets-src/      export-ignore
+# binary marks them undiffable; export-ignore keeps them out of a release.
+# Both are needed. Two Aseprite files once shipped in a built zip because they
+# were saved into assets/ rather than assets-src/, and `binary` alone did
+# nothing to stop it.
+*.ase            binary export-ignore
+*.aseprite       binary export-ignore
+
+# Build output and dependency trees.
+*.zip            export-ignore
+*.tar            export-ignore
+*.tar.gz         export-ignore
+dist/            export-ignore
+build/           export-ignore
+node_modules/    export-ignore
+vendor/          export-ignore
+
+# Editor, OS and local junk.
+.vscode/         export-ignore
+.idea/           export-ignore
+.redpen/         export-ignore
+.DS_Store        export-ignore
+Thumbs.db        export-ignore
+desktop.ini      export-ignore
+*.log            export-ignore
+*.bak            export-ignore
+*.orig           export-ignore
+*.rej            export-ignore
+
+# Keep PHP and the .pot from being mangled by autocrlf on Windows checkouts.
+*.php  text eol=lf
+*.pot  text eol=lf
+*.txt  text eol=lf
+*.md   text eol=lf
+*.sh   text eol=lf
+*.png  binary

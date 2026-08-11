@@ -1,0 +1,801 @@
+# Copyright (C) 2026 Lincoln Tracy
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Media Mage 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/media-mage\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-05T05:57:45+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: media-mage\n"
+
+#. Plugin Name of the plugin
+#: media-mage.php
+msgid "Media Mage"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: media-mage.php
+msgid "https://tracydigitalmedia.com/"
+msgstr ""
+
+#. Description of the plugin
+#: media-mage.php
+msgid "Detects duplicate and unused media files. Scan, review, and clean up your media library."
+msgstr ""
+
+#. Author of the plugin
+#: media-mage.php
+msgid "Lincoln Tracy"
+msgstr ""
+
+#: media-mage.php:61
+#: media-mage.php:242
+msgid "Media Mage"
+msgstr ""
+
+#: media-mage.php:95
+msgid "Your session expired. Reload this page and try again."
+msgstr ""
+
+#: media-mage.php:100
+#: media-mage.php:3597
+msgid "Unauthorized."
+msgstr ""
+
+#: media-mage.php:247
+#: media-mage.php:271
+msgid "Scan Media Library"
+msgstr ""
+
+#: media-mage.php:248
+msgid "Scan for duplicate files (same content) and unused media (not referenced anywhere on the site)."
+msgstr ""
+
+#. translators: %s is the formatted count of media library items
+#: media-mage.php:253
+#, php-format
+msgid "Media library: %s items"
+msgstr ""
+
+#. translators: %s is the number of items already processed
+#: media-mage.php:264
+#, php-format
+msgid "A previous scan was interrupted after %s item(s). You can carry on from where it stopped, or start again."
+msgstr ""
+
+#: media-mage.php:273
+msgid "Resume Scan"
+msgstr ""
+
+#: media-mage.php:275
+msgid "Clear Results"
+msgstr ""
+
+#: media-mage.php:281
+msgid "Scanning…"
+msgstr ""
+
+#: media-mage.php:283
+msgid "Scan progress"
+msgstr ""
+
+#: media-mage.php:298
+msgid "Scan results"
+msgstr ""
+
+#: media-mage.php:300
+msgid "Duplicates"
+msgstr ""
+
+#: media-mage.php:302
+msgid "Unused Media"
+msgstr ""
+
+#: media-mage.php:304
+#: media-mage.php:453
+msgid "Trash"
+msgstr ""
+
+#: media-mage.php:320
+#: media-mage.php:513
+msgid "Cancel"
+msgstr ""
+
+#: media-mage.php:321
+#: media-mage.php:514
+msgid "Continue"
+msgstr ""
+
+#. translators: 1: author link, 2: GitHub link, 3: Buy Me a Coffee link
+#: media-mage.php:330
+#, php-format
+msgid "Made by %1$s. %2$s · %3$s"
+msgstr ""
+
+#: media-mage.php:332
+msgid "GitHub"
+msgstr ""
+
+#: media-mage.php:333
+msgid "Buy me a coffee"
+msgstr ""
+
+#: media-mage.php:344
+msgid "Initializing scan…"
+msgstr ""
+
+#: media-mage.php:345
+msgid "Phase 1: Hashing files…"
+msgstr ""
+
+#: media-mage.php:346
+msgid "Phase 1: Hashing files for duplicate detection…"
+msgstr ""
+
+#: media-mage.php:347
+msgid "Phase 2: Checking references…"
+msgstr ""
+
+#: media-mage.php:348
+msgid "Phase 2: Checking references for unused detection…"
+msgstr ""
+
+#: media-mage.php:349
+msgid "Scan complete!"
+msgstr ""
+
+#: media-mage.php:350
+msgid "Resuming the interrupted scan…"
+msgstr ""
+
+#: media-mage.php:351
+msgid "Progress was saved. Reload this page and choose Resume Scan to carry on from here."
+msgstr ""
+
+#: media-mage.php:352
+msgid "Loading results…"
+msgstr ""
+
+#: media-mage.php:353
+msgid "Hashing complete."
+msgstr ""
+
+#: media-mage.php:354
+msgid "Reference scan complete."
+msgstr ""
+
+#: media-mage.php:355
+msgid "Nothing to scan - media library is empty."
+msgstr ""
+
+#. translators: %d is the number of media items found
+#: media-mage.php:357
+#, php-format
+msgid "Found %d media items to scan."
+msgstr ""
+
+#. translators: 1: number of duplicate groups, 2: number of unused files
+#: media-mage.php:359
+#, php-format
+msgid "Done. %1$d duplicate group(s), %2$d unused file(s)."
+msgstr ""
+
+#: media-mage.php:360
+msgid " - unused"
+msgstr ""
+
+#: media-mage.php:361
+msgid " - referenced"
+msgstr ""
+
+#: media-mage.php:362
+msgid "Error:"
+msgstr ""
+
+#: media-mage.php:363
+msgid "Network error - check that your web server is running."
+msgstr ""
+
+#. translators: 1: HTTP status code, 2: HTTP status text
+#: media-mage.php:365
+#, php-format
+msgid "Server returned HTTP %1$s %2$s"
+msgstr ""
+
+#: media-mage.php:366
+msgid "Invalid response from server (check browser console for details)."
+msgstr ""
+
+#: media-mage.php:369
+msgid "Library is clean"
+msgstr ""
+
+#: media-mage.php:370
+msgid "No duplicates or unused media found."
+msgstr ""
+
+#. translators: %s is the human-readable byte count, e.g. "234 MB"
+#: media-mage.php:372
+#, php-format
+msgid "Reclaimable: %s"
+msgstr ""
+
+#. translators: 1: dup count, 2: dup label, 3: group count, 4: group label
+#: media-mage.php:374
+#, php-format
+msgid "%1$d %2$s across %3$d %4$s"
+msgstr ""
+
+#. translators: 1: unused count, 2: unused label
+#: media-mage.php:376
+#, php-format
+msgid "%1$d %2$s"
+msgstr ""
+
+#. translators: %d is the total number of items
+#: media-mage.php:378
+#, php-format
+msgid "%d total"
+msgstr ""
+
+#: media-mage.php:379
+msgid "duplicate"
+msgstr ""
+
+#: media-mage.php:380
+msgid "duplicates"
+msgstr ""
+
+#: media-mage.php:381
+msgid "group"
+msgstr ""
+
+#: media-mage.php:382
+msgid "groups"
+msgstr ""
+
+#: media-mage.php:383
+msgid "unused file"
+msgstr ""
+
+#: media-mage.php:384
+msgid "unused files"
+msgstr ""
+
+#. translators: %s is the timestamp
+#: media-mage.php:386
+#, php-format
+msgid "Last scanned: %s"
+msgstr ""
+
+#: media-mage.php:387
+msgid "Loading previous results…"
+msgstr ""
+
+#: media-mage.php:390
+msgid "No duplicates found - your media library is clean!"
+msgstr ""
+
+#: media-mage.php:391
+msgid "Automatically Resolve All"
+msgstr ""
+
+#: media-mage.php:392
+msgid "Keeps the copy with the most references in each group"
+msgstr ""
+
+#. translators: 1: group number, 2: filename, 3: number of copies, 4: file size each
+#: media-mage.php:394
+#, php-format
+msgid "Duplicate Group #%1$d - %2$s (%3$d copies, %4$s each)"
+msgstr ""
+
+#: media-mage.php:395
+msgid "Keep"
+msgstr ""
+
+#: media-mage.php:396
+msgid "File"
+msgstr ""
+
+#: media-mage.php:397
+msgid "ID"
+msgstr ""
+
+#: media-mage.php:398
+msgid "Dimensions"
+msgstr ""
+
+#: media-mage.php:399
+msgid "Size"
+msgstr ""
+
+#: media-mage.php:400
+msgid "References"
+msgstr ""
+
+#: media-mage.php:401
+msgid "Uploaded"
+msgstr ""
+
+#: media-mage.php:402
+msgid "Type"
+msgstr ""
+
+#: media-mage.php:403
+msgid "Resolve - Keep Selected"
+msgstr ""
+
+#: media-mage.php:404
+msgid "Resolved"
+msgstr ""
+
+#: media-mage.php:405
+msgid "Resolving…"
+msgstr ""
+
+#. translators: 1: current count, 2: total count
+#: media-mage.php:407
+#, php-format
+msgid "Resolving (%1$d/%2$d)…"
+msgstr ""
+
+#: media-mage.php:408
+msgid "All Done"
+msgstr ""
+
+#: media-mage.php:409
+msgid "Select which file to keep."
+msgstr ""
+
+#. translators: 1: keeper attachment ID, 2: number of duplicates being deleted
+#: media-mage.php:411
+#, php-format
+msgid ""
+"Keep #%1$d and delete %2$d duplicate(s)?\n"
+"\n"
+"All references will be updated to point to the kept file. This cannot be undone."
+msgstr ""
+
+#. translators: %d is the number of duplicate groups
+#: media-mage.php:413
+#, php-format
+msgid ""
+"Automatically resolve all %d duplicate group(s)?\n"
+"\n"
+"For each group, the copy with the most references will be kept. All others will be deleted. This cannot be undone."
+msgstr ""
+
+#: media-mage.php:414
+msgid "No unresolved duplicate groups."
+msgstr ""
+
+#. translators: %s is a comma-separated list of filenames
+#: media-mage.php:416
+#, php-format
+msgid "Kept %s - some references to it could not be safely rewritten, so deleting it would have left them broken."
+msgstr ""
+
+#. translators: %s is a comma-separated list of filenames
+#: media-mage.php:418
+#, php-format
+msgid "Kept %s - it is no longer byte-identical to the file you chose to keep, so it is not actually a duplicate any more."
+msgstr ""
+
+#. translators: %s is a comma-separated list of filenames
+#: media-mage.php:420
+#, php-format
+msgid "Kept %s - either its file or the keeper file is missing or unreadable, so the two could not be compared."
+msgstr ""
+
+#. translators: 1: number of duplicates removed, 2: number of references updated
+#: media-mage.php:422
+#, php-format
+msgid "%1$d duplicate(s) removed, %2$d reference(s) updated."
+msgstr ""
+
+#. translators: %d is the number of duplicate groups resolved
+#: media-mage.php:424
+#, php-format
+msgid "%d group(s) resolved."
+msgstr ""
+
+#. translators: 1: number of groups resolved, 2: number of errors
+#: media-mage.php:426
+#, php-format
+msgid "%1$d group(s) resolved, %2$d error(s)."
+msgstr ""
+
+#: media-mage.php:429
+msgid "No unused media found - everything is referenced somewhere!"
+msgstr ""
+
+#: media-mage.php:430
+msgid "All unused media has been cleaned up!"
+msgstr ""
+
+#: media-mage.php:431
+msgid "Media referenced only in theme/plugin PHP files may appear as unused. Review before deleting."
+msgstr ""
+
+#: media-mage.php:432
+msgid "Cleanup Unused Media"
+msgstr ""
+
+#. translators: %d is the number of unused files
+#: media-mage.php:434
+#, php-format
+msgid "Permanently delete all %d unused file(s)"
+msgstr ""
+
+#. translators: %d is the number of unused files
+#: media-mage.php:436
+#, php-format
+msgid "Select all (%d)"
+msgstr ""
+
+#: media-mage.php:437
+msgid "Delete Selected"
+msgstr ""
+
+#: media-mage.php:438
+msgid "Deleting…"
+msgstr ""
+
+#. translators: 1: current item, 2: total
+#: media-mage.php:440
+#, php-format
+msgid "Deleting (%1$d/%2$d)…"
+msgstr ""
+
+#: media-mage.php:441
+msgid "No items selected."
+msgstr ""
+
+#: media-mage.php:442
+msgid "No unused media to clean up."
+msgstr ""
+
+#. translators: %d is the number of files being deleted
+#: media-mage.php:444
+#, php-format
+msgid ""
+"Permanently delete %d media file(s)?\n"
+"\n"
+"This will remove the files from disk and cannot be undone."
+msgstr ""
+
+#. translators: %d is the number of unused files being deleted
+#: media-mage.php:446
+#, php-format
+msgid ""
+"Permanently delete all %d unused media file(s)?\n"
+"\n"
+"This will remove the files from disk and cannot be undone."
+msgstr ""
+
+#. translators: %d is the number of files deleted
+#: media-mage.php:448
+#, php-format
+msgid "%d file(s) deleted."
+msgstr ""
+
+#. translators: 1: deleted, 2: remaining
+#: media-mage.php:450
+#, php-format
+msgid "%1$d file(s) deleted, %2$d remaining."
+msgstr ""
+
+#: media-mage.php:454
+msgid "Media Mage has not trashed anything."
+msgstr ""
+
+#: media-mage.php:455
+msgid "These files are in the trash. They are still on disk and can be restored. Emptying the trash deletes them permanently and is what actually reclaims the disk space."
+msgstr ""
+
+#: media-mage.php:456
+msgid "Restore"
+msgstr ""
+
+#: media-mage.php:457
+msgid "Restore Selected"
+msgstr ""
+
+#: media-mage.php:458
+msgid "Empty Trash (delete permanently)"
+msgstr ""
+
+#: media-mage.php:459
+msgid "Trashed"
+msgstr ""
+
+#. translators: %d is the number of restored files
+#: media-mage.php:461
+#, php-format
+msgid "%d file(s) restored."
+msgstr ""
+
+#. translators: %d is the number of files permanently deleted
+#: media-mage.php:463
+#, php-format
+msgid "%d file(s) permanently deleted."
+msgstr ""
+
+#. translators: %d is the number of files to permanently delete
+#: media-mage.php:465
+#, php-format
+msgid "Permanently delete %d file(s) from the trash? This removes them from disk and cannot be undone."
+msgstr ""
+
+#: media-mage.php:466
+msgid "Loading trash…"
+msgstr ""
+
+#: media-mage.php:469
+msgid "Ignore"
+msgstr ""
+
+#: media-mage.php:470
+msgid "Stop reporting this file as unused"
+msgstr ""
+
+#. translators: %d is the number of ignored files
+#: media-mage.php:472
+#, php-format
+msgid "%d file(s) added to the ignore list."
+msgstr ""
+
+#. translators: %d is the number of files on the ignore list
+#: media-mage.php:474
+#, php-format
+msgid "%d file(s) on the ignore list are hidden from these results."
+msgstr ""
+
+#. translators: %d is the number of attachments whose file is missing from disk
+#: media-mage.php:476
+#, php-format
+msgid "%d attachment(s) have no file on disk and were skipped."
+msgstr ""
+
+#. translators: %d is the number of references
+#: media-mage.php:480
+#, php-format
+msgid "%d reference(s)"
+msgstr ""
+
+#: media-mage.php:481
+msgid "No references found"
+msgstr ""
+
+#: media-mage.php:482
+msgid "and more…"
+msgstr ""
+
+#: media-mage.php:485
+msgid "Search filenames"
+msgstr ""
+
+#: media-mage.php:486
+msgid "Sort by"
+msgstr ""
+
+#: media-mage.php:487
+msgid "Largest first"
+msgstr ""
+
+#: media-mage.php:488
+msgid "Smallest first"
+msgstr ""
+
+#: media-mage.php:489
+msgid "Newest first"
+msgstr ""
+
+#: media-mage.php:490
+msgid "Oldest first"
+msgstr ""
+
+#: media-mage.php:491
+msgid "Filename"
+msgstr ""
+
+#: media-mage.php:492
+msgid "Export CSV"
+msgstr ""
+
+#: media-mage.php:493
+msgid "Download the full result list before deleting anything"
+msgstr ""
+
+#. translators: 1: number shown, 2: number matching
+#: media-mage.php:495
+#, php-format
+msgid "Showing %1$d of %2$d"
+msgstr ""
+
+#: media-mage.php:496
+msgid "Show more"
+msgstr ""
+
+#: media-mage.php:497
+msgid "No files match that search."
+msgstr ""
+
+#. translators: 1: unused count, 2: library total
+#: media-mage.php:499
+#, php-format
+msgid "%1$d of %2$d items in your library"
+msgstr ""
+
+#: media-mage.php:502
+msgid "Move Selected to Trash"
+msgstr ""
+
+#. translators: %d is the number of unused files
+#: media-mage.php:504
+#, php-format
+msgid "Move All Unused to Trash (%d)"
+msgstr ""
+
+#. translators: %d is the number of files being trashed
+#: media-mage.php:506
+#, php-format
+msgid "Move %d file(s) to the trash? They stay on disk and can be restored from the Trash tab."
+msgstr ""
+
+#: media-mage.php:507
+msgid "Moving to trash…"
+msgstr ""
+
+#. translators: %d is the number of files moved to trash
+#: media-mage.php:509
+#, php-format
+msgid "%d file(s) moved to trash."
+msgstr ""
+
+#. translators: %d is the number of files skipped
+#: media-mage.php:511
+#, php-format
+msgid "%d file(s) were skipped because they are referenced again since the scan."
+msgstr ""
+
+#: media-mage.php:512
+msgid "Select all shown"
+msgstr ""
+
+#: media-mage.php:515
+msgid "Delete permanently"
+msgstr ""
+
+#. translators: %s is a filename
+#: media-mage.php:519
+#, php-format
+msgid "Select %s"
+msgstr ""
+
+#. translators: %s is a filename
+#: media-mage.php:521
+#, php-format
+msgid "Keep %s"
+msgstr ""
+
+#: media-mage.php:522
+msgid "Preview"
+msgstr ""
+
+#: media-mage.php:523
+msgid "Select"
+msgstr ""
+
+#: media-mage.php:524
+msgid "Actions"
+msgstr ""
+
+#: media-mage.php:527
+msgid "Clear all scan results?"
+msgstr ""
+
+#: media-mage.php:528
+msgid "Results cleared."
+msgstr ""
+
+#. translators: %d is the attachment ID
+#: media-mage.php:530
+#, php-format
+msgid "Open #%d in Media Library"
+msgstr ""
+
+#: media-mage.php:1670
+msgid "Another scan is already running. Wait for it to finish, or reload this page to resume it."
+msgstr ""
+
+#: media-mage.php:1707
+msgid "Unknown scan phase."
+msgstr ""
+
+#: media-mage.php:1711
+msgid "No scan in progress. Run scan_init first."
+msgstr ""
+
+#: media-mage.php:1849
+msgid "Could not save scan progress - the scan state is too large for this site to store. Run \"wp media-mage scan\" on the command line instead, which does not have this limit."
+msgstr ""
+
+#: media-mage.php:2400
+msgid "No scan results. Run a scan first."
+msgstr ""
+
+#: media-mage.php:2575
+msgid "featured image"
+msgstr ""
+
+#: media-mage.php:2588
+msgid "content"
+msgstr ""
+
+#: media-mage.php:2601
+msgid "custom field"
+msgstr ""
+
+#: media-mage.php:2611
+msgid "product gallery"
+msgstr ""
+
+#: media-mage.php:2625
+msgid "site icon"
+msgstr ""
+
+#: media-mage.php:2631
+msgid "site logo"
+msgstr ""
+
+#: media-mage.php:2656
+msgid "Missing keeper_id or duplicate_ids."
+msgstr ""
+
+#. translators: %d is the attachment ID that could not be found
+#: media-mage.php:2664
+#, php-format
+msgid "Keeper attachment #%d not found."
+msgstr ""
+
+#: media-mage.php:2679
+msgid "Scan results have expired. Re-scan before resolving duplicates."
+msgstr ""
+
+#: media-mage.php:2691
+msgid "That keeper is not in the current duplicate results. Re-scan and try again."
+msgstr ""
+
+#: media-mage.php:2700
+msgid "None of those duplicates are in the keeper's group. Re-scan and try again."
+msgstr ""
+
+#: media-mage.php:3377
+#: media-mage.php:3476
+msgid "No IDs provided."
+msgstr ""
+
+#: media-mage.php:3389
+msgid "Scan results have expired. Re-scan before deleting - Media Mage will not delete files it has not just verified as unused."
+msgstr ""
+
+#: media-mage.php:3399
+msgid "None of the selected files are in the current unused list. Re-scan and try again."
+msgstr ""
+
+#: media-mage.php:3606
+msgid "Could not start the download - output had already begun."
+msgstr ""
+
+#: media-mage.php:3612
+msgid "No scan results to export. Run a scan first."
+msgstr ""

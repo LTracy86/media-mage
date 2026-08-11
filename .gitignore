@@ -1,0 +1,4 @@
+# Build output lives in the parent workspace's dist/, not here.
+*.zip
+.DS_Store
+Thumbs.db

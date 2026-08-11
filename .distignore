@@ -1,0 +1,75 @@
+# Media Mage - files that must never appear in a distributed zip.
+#
+# One pattern per line. Blank lines and lines starting with # are ignored.
+# A trailing slash marks a directory; build.sh expands it so the directory
+# and everything under it is skipped.
+#
+# Keep this file and .gitattributes in sync. .distignore drives build.sh,
+# .gitattributes drives `git archive`, and a release can be produced by
+# either one.
+
+# ---------------------------------------------------------------------------
+# The test harness. This is the important one.
+#
+# test/setup.sh drops the wpmm_test_1 MySQL database and rm -rf's a directory.
+# test/seed.php and test/seed-bulk.php delete attachments to re-seed fixtures.
+# test/README.md prints the local admin username and password in plain text.
+# None of that belongs on a stranger's server.
+# ---------------------------------------------------------------------------
+test/
+
+# ---------------------------------------------------------------------------
+# Packaging and repo metadata. Useful in the repo, noise in the zip.
+# ---------------------------------------------------------------------------
+.distignore
+.gitattributes
+.gitignore
+.git/
+.github/
+build.sh
+
+# README.md is the GitHub-facing readme. readme.txt is the one WordPress.org
+# and the plugin installer read, and shipping both invites them to drift.
+README.md
+
+# Artwork sources. Aseprite .ase files and the icon spec belong in the repo so
+# the icon can be re-cut, but they are megabytes of layered source that would
+# ship to every user for no reason. Note this is assets-src/, not assets/ -
+# assets/icon.png IS used by the plugin's admin header and must ship.
+assets-src/
+
+# ---------------------------------------------------------------------------
+# Build output. A stale zip sitting in the source tree is how the wrong
+# artifact gets shipped, so it never gets packaged into a new one.
+# ---------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+dist/
+build/
+node_modules/
+vendor/
+
+# ---------------------------------------------------------------------------
+# Editor, OS and local junk.
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+.redpen/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.bak
+*.orig
+*.rej
+*~
+
+# ---------------------------------------------------------------------------
+# Aseprite working files. The icon is authored in Aseprite and the layered
+# source belongs in assets-src/, which is already excluded. This rule is the
+# backstop for when a save dialog defaults to assets/ instead: two of these
+# shipped in a built zip once before it was caught.
+# ---------------------------------------------------------------------------
+*.ase
+*.aseprite
