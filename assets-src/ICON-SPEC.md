@@ -227,6 +227,30 @@ silhouette at 32x32, or ship the 64x64 unscaled and let CSS size it down (the
 plugin already renders it at 14px in the menu title and larger in the header, so
 a 64px source is the safer choice).
 
+### Banner, as actually built (2026-08-11)
+
+`assets-src/make-banner.php` renders both sizes from one layout defined in
+386x125 banner space, so the two exports are the same design rather than one
+resampled from the other. Verified: downscaling the 4x to the 2x size gives a
+mean channel difference of 2.0.
+
+Three decisions worth keeping:
+
+- **The plate is stripped off the hat.** With it, the icon reads as a thumbnail
+  pasted onto the banner; without it, the hat sits on the panel as a logo. Only
+  the *exterior* is dropped, by flood-fill from the border, because the same
+  slot-0 tone also draws the interior fold lines.
+- **The hat renders at 1.5x banner space**, which is a whole number at both
+  export scales (3 and 6). Any non-integer multiple destroys pixel art, so the
+  size was chosen to fit the scales rather than the other way round.
+- **One tagline, not three lines.** The first draft had a third line in slot 1
+  (`#3A3A3C`) on the dark ground and it was unreadable. Both lines auto-fit
+  against a 24px banner-space right margin, so changing the copy cannot push
+  text off the edge.
+
+The background is a slow wash from slot 0 to slot 2 across the width. It never
+mixes outside those two, so the banner stays inside the palette.
+
 ### Banner
 
 Separate canvas, **386 x 125**. Export 2x for `banner-772x250.png` and 4x for
