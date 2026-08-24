@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Media Mage
- * Plugin URI:        https://tracydigitalmedia.com/
+ * Plugin URI:        https://github.com/LTracy86/media-mage
  * Description:       Detects duplicate and unused media files. Scan, review, and clean up your media library.
  * Version:           1.0.0
  * Requires at least: 5.5
