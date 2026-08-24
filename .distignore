@@ -13,7 +13,7 @@
 #
 # test/setup.sh drops the wpmm_test_1 MySQL database and rm -rf's a directory.
 # test/seed.php and test/seed-bulk.php delete attachments to re-seed fixtures.
-# test/README.md prints the local admin username and password in plain text.
+# test/README.md documents that destructive workflow step by step.
 # None of that belongs on a stranger's server.
 # ---------------------------------------------------------------------------
 test/

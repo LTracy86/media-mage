@@ -14,7 +14,7 @@ This will:
 1. Drop + recreate the `wpmm_test_1` MySQL database.
 2. Wipe + recreate the install at `Claude Code Projects/wpmm-test-1/`.
 3. `wp core download` the latest WordPress.
-4. `wp core install` with admin `spooqs / spooqs`.
+4. `wp core install` with the admin user from your gitignored creds file (see `setup.sh`).
 5. Copy the current `media-mage/media-mage.php` + `assets/` into the install.
 6. Activate the plugin.
 7. Seed fixtures (10 attachments, 5 posts, 1 page).
@@ -23,7 +23,7 @@ When it finishes you'll see:
 
 ```
 Admin URL: http://localhost/library/Claude%20Code%20Projects/wpmm-test-1/wp-admin/
-Login:     spooqs / spooqs
+Login:     <the WP_ADMIN_USER / WP_ADMIN_PASS from your creds file>
 Media Mage: http://localhost/library/Claude%20Code%20Projects/wpmm-test-1/wp-admin/upload.php?page=media-mage
 ```
 
