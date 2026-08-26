@@ -1,0 +1,128 @@
+.wpmj-card { background:#fff; border:1px solid #c3c4c7; border-radius:4px; padding:24px 28px; margin-bottom:16px; }
+.wpmj-card h2 { margin-top:0; font-size:1.3em; }
+.wpmj-info { background:#f0f0f1; padding:10px 16px; border-radius:4px; margin:12px 0; font-size:13px; color:#555; }
+.wpmj-info strong { color:#1d2327; }
+.wpmj-bar-wrap { background:#ddd; border-radius:4px; height:24px; margin:10px 0; overflow:hidden; }
+.wpmj-bar { background:#2271b1; height:100%; width:0; transition:width .3s; border-radius:4px; }
+.wpmj-bar-label { text-align:center; font-size:12px; color:#666; margin-top:2px; }
+.wpmj-log { background:#1d2327; color:#ccc; font-family:monospace; font-size:12px; padding:12px 16px; max-height:200px; overflow-y:auto; border-radius:4px; margin-top:10px; }
+.wpmj-log .head { color:#72aee6; font-weight:bold; }
+.wpmj-log .ok { color:#68de7c; }
+.wpmj-log .warn { color:#f0c33c; }
+.wpmj-log .err { color:#e65054; }
+.wpmj-badge { background:#d63638; color:#fff; font-size:11px; font-weight:600; padding:1px 7px; border-radius:10px; margin-left:4px; }
+.wpmj-badge.clean { background:#00a32a; }
+/* Neutral state. The trash count is informational, not a problem to fix:
+   green would read as "nothing to do" while files still sit on disk, and
+   red would read as an error the user has to clear. */
+.wpmj-badge.info { background:#646970; }
+.wpmj-group { background:#fff; border:1px solid #c3c4c7; border-radius:4px; padding:16px 20px; margin-bottom:12px; }
+.wpmj-group h3 { margin:0 0 10px; font-size:14px; color:#1d2327; }
+.wpmj-actions { margin-top:10px; display:flex; gap:8px; align-items:center; }
+
+/* -------------------------------------------------------------------
+   Results tables.
+
+   These rules are keyed to the .wpmj-table CLASS, not to each table's
+   id. They used to be written per-id, which meant every table added
+   after the first inherited nothing: #wpmj-trash-table had no styling
+   at all and rendered at browser defaults next to two styled siblings,
+   and the .no-thumb placeholder was scoped to .wpmj-group so it lost
+   its 50px box everywhere except the duplicates panel - visible on
+   exactly the non-image files that fill an unused-media list.
+
+   thumbHtml() is one component shared by all three tables, so its CSS
+   is one rule. Any future table gets the styling by wearing the class.
+   ------------------------------------------------------------------- */
+.wpmj-table { width:100%; border-collapse:collapse; }
+.wpmj-table th { text-align:left; font-size:12px; color:#646970; padding:6px 8px; border-bottom:2px solid #ddd; }
+.wpmj-table td { padding:6px 8px; border-bottom:1px solid #f0f0f0; font-size:13px; vertical-align:middle; }
+/* Inside a duplicate group the table is nested in a card, so it gets a
+   lighter header rule and tighter padding than a full-panel table. */
+.wpmj-group .wpmj-table th { padding:4px 8px; border-bottom:1px solid #eee; }
+.wpmj-group .wpmj-table td { border-bottom:1px solid #f5f5f5; }
+
+#wpmj-app .thumb { width:50px; height:50px; object-fit:cover; border-radius:3px; background:#f0f0f1; display:block; }
+#wpmj-app .no-thumb { width:50px; height:50px; display:flex; align-items:center; justify-content:center; background:#f0f0f1; border-radius:3px; color:#646970; font-size:11px; font-weight:600; letter-spacing:.02em; }
+.wpmj-warn { background:#fcf9e8; border:1px solid #dba617; border-radius:4px; padding:10px 16px; font-size:13px; color:#6e4b00; margin-bottom:12px; }
+.wpmj-empty { padding:24px; text-align:center; color:#888; font-size:14px; }
+.wpmj-header { display:flex; align-items:center; gap:12px; margin:9px 0 16px; }
+.wpmj-header img { width:32px; height:32px; border-radius:4px; box-shadow:0 1px 3px rgba(30,34,37,.3); image-rendering:pixelated; }
+.wpmj-header h1 { margin:0; padding:0; line-height:1; }
+.wpmj-version { font-size:.55em; font-weight:400; }
+/* Charcoal to navy - the icon's own plate and body colors, so the two
+   loudest surfaces on the page agree. This was a violet gradient, which
+   clashed with the blue mark and matched nothing else in the UI. */
+.wpmj-savings { background:linear-gradient(135deg,#1E2225 0%,#14569B 100%); color:#fff; border-radius:6px; padding:18px 22px; margin-bottom:16px; box-shadow:0 1px 4px rgba(30,34,37,.15); }
+.wpmj-savings .total { font-size:24px; font-weight:600; margin:0 0 4px; display:flex; align-items:center; gap:10px; }
+/* The glyph is the plugin icon at 26px. Nearest-neighbour keeps a pixel
+   sprite crisp instead of smearing it. */
+.wpmj-savings .total .spark { width:26px; height:26px; border-radius:3px; image-rendering:pixelated; flex:0 0 auto; }
+.wpmj-savings .breakdown { font-size:13px; opacity:.9; }
+.wpmj-savings.clean { background:linear-gradient(135deg,#1d6e3a 0%,#2cb260 100%); }
+.wpmj-meta { font-size:12px; color:#888; margin:8px 0 14px; }
+.wpmj-table tbody tr:hover { background:#f6f7f7; }
+.wpmj-table tbody tr { transition:background .12s ease; }
+/* text-decoration:none matters only for the .no-thumb placeholder. An
+   <img> is an atomic inline so the admin's link underline is never drawn
+   through it, but the text placeholder is not, and it was rendering as
+   blue underlined link text instead of a muted file-type label. */
+#wpmj-app .thumb-link { display:inline-block; line-height:0; text-decoration:none; transition:transform .12s ease; }
+#wpmj-app .thumb-link:hover { transform:scale(1.08); }
+.wpmj-group[data-resolved="true"] { opacity:.55; }
+.wpmj-group[data-resolved="true"] .wpmj-resolve-btn { pointer-events:none; }
+.wpmj-footer { margin:32px 0 16px; padding:14px 18px; background:#fff; border:1px solid #e5e5e8; border-radius:6px; font-size:13px; color:#555; text-align:center; }
+.wpmj-footer a { color:#2271b1; text-decoration:none; }
+.wpmj-footer a:hover { text-decoration:underline; }
+
+/* Tables get their own scroll container so the PAGE never scrolls
+   sideways on a narrow screen. */
+.wpmj-tablewrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+/* Toolbar above each results table: search, sort, bulk actions. */
+.wpmj-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px; }
+.wpmj-toolbar .spacer { flex:1 1 auto; }
+.wpmj-toolbar input[type=search], .wpmj-toolbar select { height:30px; }
+.wpmj-count { font-size:12px; color:#646970; }
+
+/* Where-is-this-used drill-down. */
+.wpmj-refs { font-size:12px; }
+.wpmj-refs > summary { cursor:pointer; color:#2271b1; list-style:none; }
+.wpmj-refs > summary::-webkit-details-marker { display:none; }
+.wpmj-refs > summary:hover { text-decoration:underline; }
+.wpmj-refs ul { margin:6px 0 2px 0; padding-left:16px; }
+.wpmj-refs li { margin:2px 0; }
+.wpmj-refs .via { color:#646970; }
+
+.wpmj-pager { display:flex; gap:8px; align-items:center; justify-content:center; margin:12px 0; font-size:13px; }
+.wpmj-danger { color:#b32d2e; }
+.wpmj-trash-note { background:#f0f6fc; border:1px solid #c5d9ed; border-radius:4px; padding:10px 16px; font-size:13px; color:#1d3f5e; margin-bottom:12px; }
+
+/* Native dialog for destructive confirmation. window.confirm is OS-modal
+   and, after the second one in a run, the browser offers to suppress it -
+   at which point it silently returns false and the user's bulk action
+   stops working with no explanation. */
+.wpmj-dialog { border:none; border-radius:6px; padding:0; max-width:520px; width:calc(100% - 32px); box-shadow:0 8px 40px rgba(0,0,0,.25); }
+.wpmj-dialog::backdrop { background:rgba(0,0,0,.5); }
+.wpmj-dialog .body { padding:22px 24px 8px; }
+.wpmj-dialog h2 { margin:0 0 10px; font-size:1.15em; }
+.wpmj-dialog p { margin:0 0 10px; font-size:13px; line-height:1.6; color:#3c434a; white-space:pre-line; }
+.wpmj-dialog .foot { padding:8px 24px 20px; display:flex; gap:8px; justify-content:flex-end; }
+.wpmj-dialog .filelist { max-height:180px; overflow:auto; background:#f6f7f7; border-radius:4px; padding:8px 12px; font-size:12px; font-family:monospace; margin-bottom:10px; }
+
+/* Contrast: #888 on white is about 3.5:1 and fails WCAG AA. #646970 is
+   WordPress's own muted grey and passes at 5.9:1. The version number in
+   the page heading was set to #aaa inline, which is 2.3:1 and fails even
+   the relaxed large-text threshold. */
+.wpmj-empty, .wpmj-meta, .wpmj-version { color:#646970; }
+
+@media (prefers-reduced-motion: reduce) {
+	.wpmj-bar, .wpmj-table tbody tr, #wpmj-app .thumb-link { transition:none; }
+	#wpmj-app .thumb-link:hover { transform:none; }
+}
+
+@media screen and (max-width:600px) {
+	.wpmj-card { padding:16px 14px; }
+	.wpmj-col-optional { display:none; }
+	.wpmj-toolbar { flex-direction:column; align-items:stretch; }
+}
