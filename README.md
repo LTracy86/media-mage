@@ -75,7 +75,7 @@ A tool that deletes media is one bad search away from destroying a live site. Fo
 
 ## WP-CLI
 
-Every operation the admin screen performs is on the command line, free. The paid competitors gate this behind their pro tier; it is a few hundred lines over functions the admin screen already calls.
+Every operation the admin screen performs is on the command line. `resolve` and `delete` both take `--dry-run`, which reports exactly what would happen and changes nothing.
 
 ```bash
 wp media-mage scan

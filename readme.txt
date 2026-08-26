@@ -139,7 +139,7 @@ For anything you want handled in code, the `wpmj_is_referenced` filter runs last
 
 = Does it work with Oxygen Builder? =
 
-Yes, and this is why the plugin exists. Oxygen stores layouts as base64-encoded post meta and options, which most cleanup plugins never decode, so an Oxygen site looks like it has hundreds of unused images. Media Mage decodes that data and searches inside it, matching on full paths rather than bare filenames so `logo.png` does not match `site-logo.png`.
+Yes, and this is why the plugin exists. Oxygen stores layouts as base64-encoded post meta and options. Read those values as plain text and no image reference in them is visible, so an Oxygen site looks like it has hundreds of unused images. Media Mage decodes that data and searches inside it, matching on full paths rather than bare filenames so `logo.png` does not match `site-logo.png`.
 
 = Does it work with Elementor, Divi, Gutenberg and ACF? =
 
@@ -159,7 +159,7 @@ The hash phase runs 50 attachments per request, the reference phase 25, and hash
 
 = Is there a command line interface? =
 
-Yes, and it is free. Every operation the admin screen performs is available under `wp media-mage`:
+Yes. Every operation the admin screen performs is available under `wp media-mage`:
 
 `wp media-mage scan
 wp media-mage duplicates --format=json
@@ -176,8 +176,6 @@ wp media-mage trash restore <id>...
 wp media-mage trash empty --yes`
 
 `resolve` and `delete` both take `--dry-run`, which reports exactly what would happen and changes nothing. Use it first.
-
-The paid competitors gate a command line behind their pro tier. It is a few hundred lines sitting on top of the functions the admin screen already calls, so gating it is a pricing decision rather than an engineering one.
 
 = Is there a Pro version? =
 
